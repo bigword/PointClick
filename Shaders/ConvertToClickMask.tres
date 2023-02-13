@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform vec4 white_defined;
+uniform vec4 black_defined;
+
+void fragment()
+{
+	vec4 sprite_color = texture(TEXTURE, UV).rgba;
+	
+	if (sprite_color.a < 0.5)
+	{
+		COLOR = black_defined
+	}
+	else
+	{
+		COLOR = white_defined
+	}
+}
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/white_defined = Plane( 1, 1, 1, 1 )
+shader_param/black_defined = Plane( 0, 0, 0, 1 )

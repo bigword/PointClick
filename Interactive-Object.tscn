@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Interactive-Object.gd" type="Script" id=1]
+
+[node name="Interactive-Object" type="TextureButton"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_InteractiveObject_pressed"]
